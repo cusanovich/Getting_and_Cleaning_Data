@@ -25,10 +25,10 @@
   Hint: Use library(dplyr) to load the dplyr package.
 
 - Class: cmd_question
-  Output: I've made the dataset available to you in a data frame called mydf. Put it in a 'data frame tbl' using the tbl_df() function and store the result in a object called cran. If you're not sure what I'm talking about, you should start with the previous lesson. Otherwise, practice makes perfect!
-  CorrectAnswer: cran <- tbl_df(mydf)
-  AnswerTests: omnitest(correctExpr='cran <- tbl_df(mydf)')
-  Hint: Type cran <- tbl_df(mydf) to store the data in a new tbl_df called cran.
+  Output: I've made the dataset available to you in a data frame called mydf. Put it in a 'tibble' using the as_tibble() function and store the result in a object called cran. If you're not sure what I'm talking about, you should start with the previous lesson. Otherwise, practice makes perfect!
+  CorrectAnswer: cran <- as_tibble(mydf)
+  AnswerTests: omnitest(correctExpr='cran <- as_tibble(mydf)')
+  Hint: Type cran <- as_tibble(mydf) to store the data in a new tibble called cran.
 
 - Class: cmd_question
   Output: To avoid confusion and keep things running smoothly, let's remove the original dataframe from your workspace with rm("mydf").
@@ -61,10 +61,10 @@
   Hint: Type by_package to view its contents.
 
 - Class: text
-  Output: "At the top of the output above, you'll see 'Groups: package', which tells us that this tbl has been grouped by the package variable. Everything else looks the same, but now any operation we apply to the grouped data will take place on a per package basis."
+  Output: "At the top of the output above, you'll see 'Groups: package', which tells us that this tibble has been grouped by the package variable. Everything else looks the same, but now any operation we apply to the grouped data will take place on a per package basis."
 
 - Class: text
-  Output: Recall that when we applied mean(size) to the original tbl_df via summarize(), it returned a single number -- the mean of all values in the size column. We may care about what that number is, but wouldn't it be so much more interesting to look at the mean download size for each unique package?
+  Output: Recall that when we applied mean(size) to the original tibble via summarize(), it returned a single number -- the mean of all values in the size column. We may care about what that number is, but wouldn't it be so much more interesting to look at the mean download size for each unique package?
 
 - Class: cmd_question
   Output: That's exactly what you'll get if you use summarize() to apply mean(size) to the grouped data in by_package. Give it a shot.
@@ -82,7 +82,7 @@
   Script: summarize1.R
 
 - Class: cmd_question
-  Output: Print the resulting tbl, pack_sum, to the console to examine its contents.
+  Output: Print the resulting tibble, pack_sum, to the console to examine its contents.
   CorrectAnswer: pack_sum
   AnswerTests: any_of_exprs('pack_sum', 'print(pack_sum)')
   Hint: Type pack_sum to view its contents.
