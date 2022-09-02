@@ -16,7 +16,7 @@ df <- read.csv(path2csv, as.is = TRUE)
 dim(df)
 head(df)
 library(dplyr)
-cran <- tbl_df(df)
+cran <- as_tibble(df)
 cran
 ?manip
 
